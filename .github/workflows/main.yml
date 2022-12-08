@@ -111,10 +111,14 @@ jobs:
         cd assets
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
+        git fetch
+        git pull
         git add *.png
         git add *.svg
         git commit -m "Automatic update of example image files"
         git status
+        pwd
+        ls -lrt
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:

@@ -109,10 +109,14 @@ jobs:
         mv *.png assets/.
         mv *.svg assets/.
         cd assets
-        git add *.png
-        git add *.svg
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git commit -a -m "Automatic update of example image files"
+        git add *.png
+        git add *.svg
+        git commit -m "Automatic update of example image files"
+        git status
     - name: Push changes
       uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: assets

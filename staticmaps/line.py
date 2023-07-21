@@ -7,6 +7,7 @@ import typing
 import s2sphere  # type: ignore
 from geographiclib.geodesic import Geodesic  # type: ignore
 
+from .bounds import Bounds
 from .cairo_renderer import CairoRenderer
 from .color import RED, Color
 from .coordinates import create_latlng
@@ -15,7 +16,7 @@ from .pillow_renderer import PillowRenderer
 from .svg_renderer import SvgRenderer
 
 
-class Line(Object):
+class Line(Bounds):
     """
     Line A line object
     """
@@ -65,7 +66,7 @@ class Line(Object):
         Returns:
             PixelBoundsT: extra pixel bounds
         """
-        return self._width, self._width, self._width, self._width
+        return int(0.5 * self._width), int(0.5 * self._width), int(0.5 * self._width), int(0.5 * self._width)
 
     def interpolate(self) -> typing.List[s2sphere.LatLng]:
         """Interpolate bounds

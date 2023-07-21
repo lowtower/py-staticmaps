@@ -19,7 +19,7 @@ context.add_object(staticmaps.Marker(newyork, color=staticmaps.RED, size=12))
 image = context.render_pillow(800, 500)
 image.save("frankfurt_newyork.pillow.png")
 
-# render png via cairo
+# render anti-aliased png (this only works if pycairo is installed)
 if staticmaps.cairo_is_supported():
     image = context.render_cairo(800, 500)
     image.write_to_png("frankfurt_newyork.cairo.png")
@@ -28,6 +28,17 @@ if staticmaps.cairo_is_supported():
 svg_image = context.render_svg(800, 500)
 with open("frankfurt_newyork.svg", "w", encoding="utf-8") as f:
     svg_image.write(f, pretty=True)
+
+# render png via pillow - tight boundaries
+context.set_tighten_to_bounds(True)
+image = context.render_pillow(800, 500)
+image.save("frankfurt_newyork.tight.pillow.png")
+
+# render png via cairo - tight boundaries
+if staticmaps.cairo_is_supported():
+    context.set_tighten_to_bounds(True)
+    image = context.render_cairo(800, 500)
+    image.write_to_png("frankfurt_newyork.tight.cairo.png")
 
 # render svg - tight boundaries
 context.set_tighten_to_bounds(True)

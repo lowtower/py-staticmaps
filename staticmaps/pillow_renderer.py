@@ -1,7 +1,7 @@
 """py-staticmaps PillowRenderer"""
 
 # py-staticmaps
-# Copyright (c) 2020 Florian Pigorsch; see /LICENSE for licensing information
+# Copyright (c) 2021 Florian Pigorsch; see /LICENSE for licensing information
 
 import io
 import math
@@ -29,12 +29,12 @@ class PillowRenderer(Renderer):
         self._draw = PIL_ImageDraw.Draw(self._image)
         self._offset_x = 0
 
-    def draw(self) -> PIL_ImageDraw.Draw:
+    def draw(self) -> PIL_ImageDraw.ImageDraw:
         """
-        draw Call PIL_ImageDraw.Draw()
+        draw Call PIL_ImageDraw.ImageDraw()
 
         Returns:
-            PIL_ImageDraw.Draw: An PIL_Image draw object
+            PIL_ImageDraw.ImageDraw: An PIL_Image draw object
         """
         return self._draw
 
@@ -138,11 +138,11 @@ class PillowRenderer(Renderer):
         margin = 2
         w = self._trans.image_width()
         h = self._trans.image_height()
-        left, top, right, bottom = self.draw().textbbox((margin, h - margin), attribution)
+        _, top, _, bottom = self.draw().textbbox((margin, h - margin), attribution)
         th = bottom - top
         overlay = PIL_Image.new("RGBA", self._image.size, (255, 255, 255, 0))
         draw = PIL_ImageDraw.Draw(overlay)
-        draw.rectangle(((0, h - th - 2 * margin), (w, h)), fill=(255, 255, 255, 204))
+        draw.rectangle([(0, h - th - 2 * margin), (w, h)], fill=(255, 255, 255, 204))
         self.alpha_compose(overlay)
         self.draw().text((margin, h - th - margin), attribution, fill=(0, 0, 0, 255))
 
@@ -165,7 +165,7 @@ class PillowRenderer(Renderer):
         return PIL_Image.open(io.BytesIO(image_data))
 
     @staticmethod
-    def create_image(image_data: bytes) -> PIL_Image:
+    def create_image(image_data: bytes) -> PIL_Image.Image:
         """Create a pillow image
 
         Parameters:

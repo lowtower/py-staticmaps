@@ -9,7 +9,7 @@ jobs:
       max-parallel: 4
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: ["3.8", "3.9", "3.10", "3.11"]
+        python-version: [3.11]
     steps:
     - name: Git config
       run: git config --global core.autocrlf input
@@ -42,7 +42,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: [3.8]
+        python-version: [3.11]
     needs: "lint_and_test"
     if: github.ref == 'refs/heads/main'
     steps:
@@ -87,7 +87,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: [3.8]
+        python-version: [3.11]
     needs: "build"
     if: github.ref == 'refs/heads/main'
     steps:

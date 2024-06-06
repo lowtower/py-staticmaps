@@ -6,7 +6,7 @@
 import staticmaps
 
 context = staticmaps.Context()
-context.set_tile_provider(staticmaps.tile_provider_StamenToner)
+context.set_tile_provider(staticmaps.tile_provider_ArcGISWorldImagery)
 
 frankfurt = staticmaps.create_latlng(50.110644, 8.682092)
 newyork = staticmaps.create_latlng(40.712728, -74.006015)
@@ -21,8 +21,8 @@ image.save("frankfurt_newyork.pillow.png")
 
 # render anti-aliased png (this only works if pycairo is installed)
 if staticmaps.cairo_is_supported():
-    image = context.render_cairo(800, 500)
-    image.write_to_png("frankfurt_newyork.cairo.png")
+    cairo_image = context.render_cairo(800, 500)
+    cairo_image.write_to_png("frankfurt_newyork.cairo.png")
 
 # render svg
 svg_image = context.render_svg(800, 500)

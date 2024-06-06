@@ -88,6 +88,7 @@ run-examples: ## Generate example images
 	(cd examples && PYTHONPATH=.. ../.env/bin/python geodesic_circles.py)
 	(cd examples && PYTHONPATH=.. ../.env/bin/python tile_providers.py)
 	(cd examples && PYTHONPATH=.. ../.env/bin/python us_capitals.py)
+	(cd examples && PYTHONPATH=.. ../.env/bin/python idl.py)
 	(cd examples && mkdir -p build)
 	(cd examples && ls        *.svg 2>/dev/null && mv        *.svg build/.) || echo "no svg files found!"
 	(cd examples && ls *pillow*.png 2>/dev/null && mv *pillow*.png build/.) || echo "no pillow png files found!"

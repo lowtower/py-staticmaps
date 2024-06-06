@@ -141,7 +141,7 @@ class Context:
 
         return renderer.image_surface()
 
-    def render_pillow(self, width: int, height: int) -> PIL_Image:
+    def render_pillow(self, width: int, height: int) -> PIL_Image.Image:
         """Render context using PILLOW
 
         Parameters:

@@ -13,9 +13,9 @@ jobs:
     steps:
     - name: Git config
       run: git config --global core.autocrlf input
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python v${{matrix.python-version}} - ${{runner.os}}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: ${{matrix.python-version}}
         cache: pip
@@ -50,9 +50,9 @@ jobs:
       run: sudo apt-get install libcairo2-dev
     - name: Git config
       run: git config --global core.autocrlf input
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python v${{matrix.python-version}} - ${{runner.os}}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: ${{matrix.python-version}}
         cache: pip
@@ -91,7 +91,7 @@ jobs:
     needs: "build"
     if: github.ref == 'refs/heads/main'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
     - name: Setup git and push to remote

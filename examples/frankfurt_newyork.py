@@ -37,8 +37,8 @@ image.save("frankfurt_newyork.tight.pillow.png")
 # render png via cairo - tight boundaries
 if staticmaps.cairo_is_supported():
     context.set_tighten_to_bounds(True)
-    image = context.render_cairo(800, 500)
-    image.write_to_png("frankfurt_newyork.tight.cairo.png")
+    cairo_image = context.render_cairo(800, 500)
+    cairo_image.write_to_png("frankfurt_newyork.tight.cairo.png")
 
 # render svg - tight boundaries
 context.set_tighten_to_bounds(True)

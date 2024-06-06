@@ -1,4 +1,5 @@
 """py-staticmaps - tile_provider"""
+
 # Copyright (c) 2020 Florian Pigorsch; see /LICENSE for licensing information
 
 import string

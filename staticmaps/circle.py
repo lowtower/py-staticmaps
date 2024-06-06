@@ -1,4 +1,5 @@
 """py-staticmaps - circle"""
+
 # Copyright (c) 2020 Florian Pigorsch; see /LICENSE for licensing information
 
 import typing

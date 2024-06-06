@@ -1,4 +1,5 @@
 """py-staticmaps - image_marker"""
+
 # Copyright (c) 2020 Florian Pigorsch; see /LICENSE for licensing information
 
 import io

@@ -1,4 +1,5 @@
 """py-staticmaps - meta"""
+
 # Copyright (c) 2020 Florian Pigorsch; see /LICENSE for licensing information
 
 GITHUB_URL = "https://github.com/flopp/py-staticmaps"

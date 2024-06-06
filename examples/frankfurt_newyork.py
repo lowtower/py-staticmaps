@@ -47,7 +47,7 @@ with open("frankfurt_newyork.tight.svg", "w", encoding="utf-8") as f:
     svg_image.write(f, pretty=True)
 
 context2 = staticmaps.Context()
-context2.set_tile_provider(staticmaps.tile_provider_StamenToner)
+context2.set_tile_provider(staticmaps.tile_provider_CartoDarkNoLabels)
 context2.add_object(staticmaps.Bounds([frankfurt, newyork]))
 
 # render svg

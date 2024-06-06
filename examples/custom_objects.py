@@ -37,7 +37,9 @@ class TextLabel(staticmaps.Object):
         x, y = renderer.transformer().ll2pixel(self.latlng())
         x = x + renderer.offset_x()
 
-        tw, th = renderer.draw().textsize(self._text)
+        left, top, right, bottom = renderer.draw().textbbox((0, 0), self._text)
+        th = bottom - top
+        tw = right - left
         w = max(self._arrow, tw + 2 * self._margin)
         h = th + 2 * self._margin
 
@@ -155,8 +157,8 @@ image.save("custom_objects.pillow.png")
 
 # render png via cairo
 if staticmaps.cairo_is_supported():
-    image = context.render_cairo(800, 500)
-    image.write_to_png("custom_objects.cairo.png")
+    cairo_image = context.render_cairo(800, 500)
+    cairo_image.write_to_png("custom_objects.cairo.png")
 
 # render svg
 svg_image = context.render_svg(800, 500)

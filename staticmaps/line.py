@@ -22,8 +22,9 @@ class Line(Bounds):
     Line A line object
     """
 
+    # pylint: disable=super-init-not-called
     def __init__(self, latlngs: typing.List[s2sphere.LatLng], color: Color = RED, width: int = 2) -> None:
-        Object.__init__(self)
+        Object.__init__(self)  # pylint: disable=non-parent-init-called
         if latlngs is None or len(latlngs) < 2:
             raise ValueError("Trying to create line with less than 2 coordinates")
         if width < 0:

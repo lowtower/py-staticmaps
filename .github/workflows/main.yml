@@ -115,7 +115,7 @@ jobs:
         git pull
         git add *.png
         git add *.svg
-        git commit -m "Automatic update of example image files"
+        git commit -m "Automatic update of example image files `date +\"%d-%m-%Y %T\"`"
         git status
         pwd
         ls -lrt

@@ -1,7 +1,7 @@
 [![License MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](LICENSE)
 
 # py-staticmaps assets
-This repository contains automatically generated example images from py-staticmaps
+This branch contains automatically generated example images from py-staticmaps.
 
 # Custom objects
 ## Cairo example
@@ -142,16 +142,6 @@ This repository contains automatically generated example images from py-staticma
 ### SVG tight example
 ![provider_jawg-light.tight.svg](provider_jawg-light.tight.svg?raw=true)
 
-## None
-### Cairo example
-![provider_none.cairo.png](provider_none.cairo.png?raw=true)
-### Pillow example
-![provider_none.pillow.png](provider_none.pillow.png?raw=true)
-### SVG example
-![provider_none.svg](provider_none.svg?raw=true)
-### SVG tight example
-![provider_none.tight.svg](provider_none.tight.svg?raw=true)
-
 ## OSM (OpenStreetMaps)
 ### Cairo example
 ![provider_osm.cairo.png](provider_osm.cairo.png?raw=true)
@@ -171,6 +161,16 @@ This repository contains automatically generated example images from py-staticma
 ![provider_stadia-alidade-smooth.svg](provider_stadia-alidade-smooth.svg?raw=true)
 ### SVG tight example
 ![provider_stadia-alidade-smooth.tight.svg](provider_stadia-alidade-smooth.tight.svg?raw=true)
+
+## None
+### Cairo example
+![provider_none.cairo.png](provider_none.cairo.png?raw=true)
+### Pillow example
+![provider_none.pillow.png](provider_none.pillow.png?raw=true)
+### SVG example
+![provider_none.svg](provider_none.svg?raw=true)
+### SVG tight example
+![provider_none.tight.svg](provider_none.tight.svg?raw=true)
 
 
 [MIT](LICENSE) &copy; 2020-2024 Florian Pigorsch et al.

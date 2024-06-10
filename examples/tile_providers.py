@@ -21,13 +21,13 @@ context.add_object(staticmaps.Marker(p3, color=staticmaps.YELLOW))
 for name, provider in staticmaps.default_tile_providers.items():
     # Jawg and Stadia require access tokens
     if "jawg" in provider.name():
-        if os.environ["API_KEY_JAWG"]:
-            provider.set_api_key(os.environ["API_KEY_JAWG"])
+        if "API_KEY_JAWG" in os.environ:
+            provider.set_api_key(os.environ.get("API_KEY_JAWG"))  # type: ignore
         else:
             continue
     if "stadia" in provider.name():
-        if os.environ["API_KEY_STADIA"]:
-            provider.set_api_key(os.environ["API_KEY_STADIA"])
+        if "API_KEY_STADIA" in os.environ:
+            provider.set_api_key(os.environ.get("API_KEY_STADIA"))  # type: ignore
         else:
             continue
     context.set_tile_provider(provider)

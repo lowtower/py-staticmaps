@@ -196,9 +196,9 @@ with open("draw_gpx.tight.svg", "w", encoding="utf-8") as f:
     svg_image.write(f, pretty=True)
 ```
 #### Cairo example
-![draw_gpx](../assets/draw_gpx.cairo.png?raw=true)
+![draw_gpx](../assets/running.cairo.png?raw=true)
 #### SVG tight example
-![draw_gpx_svg_tight](../assets/draw_gpx.tight.svg?raw=true)
+![draw_gpx_svg_tight](../assets/running.tight.svg?raw=true)
 
 
 ### US State Capitals

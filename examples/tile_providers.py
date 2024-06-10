@@ -3,6 +3,8 @@
 """py-staticmaps - Example Tile Providers"""
 # Copyright (c) 2020 Florian Pigorsch; see /LICENSE for licensing information
 
+import os
+
 import staticmaps
 
 context = staticmaps.Context()
@@ -17,6 +19,17 @@ context.add_object(staticmaps.Marker(p2, color=staticmaps.GREEN))
 context.add_object(staticmaps.Marker(p3, color=staticmaps.YELLOW))
 
 for name, provider in staticmaps.default_tile_providers.items():
+    # Jawg and Stadia require access tokens
+    if "jawg" in provider.name():
+        if os.environ["API_KEY_JAWG"]:
+            provider.set_api_key(os.environ["API_KEY_JAWG"])
+        else:
+            continue
+    if "stadia" in provider.name():
+        if os.environ["API_KEY_STADIA"]:
+            provider.set_api_key(os.environ["API_KEY_STADIA"])
+        else:
+            continue
     context.set_tile_provider(provider)
 
     # render png via pillow

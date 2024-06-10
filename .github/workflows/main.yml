@@ -63,6 +63,9 @@ jobs:
         pip install -r requirements-cairo.txt
         pip install -r requirements-examples.txt
     - name: Build examples
+      env:
+          API_KEY_JAWG: ${{ secrets.API_KEY_JAWG }}
+          API_KEY_STADIA: ${{ secrets.API_KEY_STADIA }}
       run: |
         cd examples
         mkdir build

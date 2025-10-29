@@ -119,6 +119,4 @@ upload-package: ## Upload package
 
 .PHONY: documentation
 documentation: ## Generate documentation
-	@if type mkdocs >/dev/null 2>&1 ; then .env/bin/python -m mkdocs build --clean --verbose ; \
-	 else echo "SKIPPED. Run '.env/bin/python -m install mkdocs' first." >&2 ; fi 
-
+	.env/bin/python -m mkdocs build --clean --verbose

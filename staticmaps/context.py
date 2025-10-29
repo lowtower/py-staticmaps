@@ -318,10 +318,10 @@ class Context:
                 min_y = t
                 max_y = b
             else:
-                min_x = min(min_x, l)
-                max_x = max(max_x, r)
-                min_y = min(min_y, t)
-                max_y = max(max_y, b)
+                min_x = min(min_x, l)  # type: ignore
+                max_x = max(max_x, r)  # type: ignore
+                min_y = min(min_y, t)  # type: ignore
+                max_y = max(max_y, b)  # type: ignore
         assert min_x is not None
         assert max_x is not None
         assert min_y is not None

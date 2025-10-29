@@ -27,9 +27,11 @@ This branch contains automatically generated example images from py-staticmaps.
 ## SVG tight example
 ![frankfurt_newyork.tight.svg](frankfurt_newyork.tight.svg?raw=true)
 ## SVG custom bounds example
-![frankfurt_newyork.bounds.svg](frankfurt_newyork.bounds.svg?raw=true)
+### Boundaries of Warsaw and Los Angeles
+![frankfurt_newyork.warsaw_los_angeles_bounds.svg](frankfurt_newyork.warsaw_los_angeles_bounds.svg?raw=true)
 ## SVG custom bounds tight example
-![frankfurt_newyork.bounds.tight.svg](frankfurt_newyork.bounds.tight.svg?raw=true)
+### Boundaries of Warsaw and Los Angeles
+![frankfurt_newyork.warsaw_los_angeles_bounds.tight.svg](frankfurt_newyork.warsaw_los_angeles_bounds.tight.svg?raw=true)
 
 # Freiburg area
 ## Cairo example

@@ -1,15 +1,20 @@
 #!/usr/bin/env python
 
 """py-staticmaps - Example Frankfurt-New York"""
-# Copyright (c) 2020 Florian Pigorsch; see /LICENSE for licensing information
+# Copyright (c) 2020-2025 Florian Pigorsch & Contributors. All rights reserved.
+#
+# Use of this source code is governed by a MIT-style
+# license that can be found in the LICENSE file.
 
 import staticmaps
 
 context = staticmaps.Context()
 context.set_tile_provider(staticmaps.tile_provider_ArcGISWorldImagery)
 
+warsaw = staticmaps.create_latlng(52.233207, 21.061419)
 frankfurt = staticmaps.create_latlng(50.110644, 8.682092)
 newyork = staticmaps.create_latlng(40.712728, -74.006015)
+los_angeles = staticmaps.create_latlng(33.999099, -118.411735)
 
 context.add_object(staticmaps.Line([frankfurt, newyork], color=staticmaps.BLUE, width=4))
 context.add_object(staticmaps.Marker(frankfurt, color=staticmaps.GREEN, size=12))
@@ -48,15 +53,17 @@ with open("frankfurt_newyork.tight.svg", "w", encoding="utf-8") as f:
 
 context2 = staticmaps.Context()
 context2.set_tile_provider(staticmaps.tile_provider_CartoDarkNoLabels)
-context2.add_object(staticmaps.Bounds([frankfurt, newyork]))
+context2.add_object(staticmaps.Marker(frankfurt, color=staticmaps.GREEN, size=12))
+context2.add_object(staticmaps.Marker(newyork, color=staticmaps.RED, size=12))
+context2.add_object(staticmaps.Bounds([warsaw, los_angeles]))
 
 # render svg
 svg_image = context2.render_svg(800, 500)
-with open("frankfurt_newyork.bounds.svg", "w", encoding="utf-8") as f:
+with open("frankfurt_newyork.warsaw_los_angeles_bounds.svg", "w", encoding="utf-8") as f:
     svg_image.write(f, pretty=True)
 
 # render svg - tight boundaries
 context2.set_tighten_to_bounds(True)
 svg_image = context2.render_svg(800, 500)
-with open("frankfurt_newyork.bounds.tight.svg", "w", encoding="utf-8") as f:
+with open("frankfurt_newyork.warsaw_los_angeles_bounds.tight.svg", "w", encoding="utf-8") as f:
     svg_image.write(f, pretty=True)

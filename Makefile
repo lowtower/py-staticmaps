@@ -4,7 +4,6 @@ SRC_TEST=tests
 SRC_EXAMPLES=examples
 SRC_COMPLETE=$(SRC_CORE) $(SRC_TEST) $(SRC_EXAMPLES) docs/gen_ref_pages.py
 PYTHON=python3
-PIP=$(PYTHON) -m pip
 
 help: ## Print help for each target
 	$(info Makefile low-level Python API.)
@@ -16,6 +15,7 @@ help: ## Print help for each target
 		| sort | awk 'BEGIN {FS=":.* ## "}; {printf "%-25s %s\n", $$1, $$2};'
 
 clean: ## Cleanup
+	@rm -rf ./.env
 	@rm -f  ./*.pyc
 	@rm -rf ./__pycache__
 	@rm -f  $(SRC_CORE)/*.pyc
@@ -81,6 +81,7 @@ format: ## Format the code
 
 .PHONY: run-examples
 run-examples: ## Generate example images
+	(cd examples && rm -r build)
 	(cd examples && PYTHONPATH=.. ../.env/bin/python custom_objects.py)
 	(cd examples && PYTHONPATH=.. ../.env/bin/python draw_gpx.py running.gpx)
 	(cd examples && PYTHONPATH=.. ../.env/bin/python frankfurt_newyork.py)
@@ -118,6 +119,4 @@ upload-package: ## Upload package
 
 .PHONY: documentation
 documentation: ## Generate documentation
-	@if type mkdocs >/dev/null 2>&1 ; then .env/bin/python -m mkdocs build --clean --verbose ; \
-	 else echo "SKIPPED. Run '$(PIP) install mkdocs' first." >&2 ; fi 
-
+	.env/bin/python -m mkdocs build --clean --verbose

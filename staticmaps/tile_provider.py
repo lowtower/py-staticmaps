@@ -102,6 +102,7 @@ class TileProvider:
         return self._url_pattern.substitute(s=shard, z=zoom, x=x, y=y, k=self._api_key)
 
 
+# pylint: disable=invalid-name
 tile_provider_OSM = TileProvider(
     "osm",
     url_pattern="https://$s.tile.openstreetmap.org/$z/$x/$y.png",

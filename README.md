@@ -106,7 +106,7 @@ with open("frankfurt_newyork.warsaw_los_angeles_bounds.tight.svg", "w", encoding
 #### SVG tight example
 ![frankfurt_newyork_svg_tight](../assets/frankfurt_newyork.tight.svg?raw=true)
 #### SVG custom bounds example (custom bounds of Warsaw and Los Angeles)
-![frankfurt_newyork.warsaw_los_angeles_bounds.svg(../assets/frankfurt_newyork.warsaw_los_angeles_bounds.svg?raw=true)
+![frankfurt_newyork.warsaw_los_angeles_bounds.svg](../assets/frankfurt_newyork.warsaw_los_angeles_bounds.svg?raw=true)
 #### SVG custom bounds tight example (custom bounds of Warsaw and Los Angeles)
 ![frankfurt_newyork.warsaw_los_angeles_bounds.tight.svg](../assets/frankfurt_newyork.warsaw_los_angeles_bounds.tight.svg?raw=true)
 

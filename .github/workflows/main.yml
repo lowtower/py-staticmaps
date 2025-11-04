@@ -81,7 +81,7 @@ jobs:
         (ls  *cairo*.png && mv  *cairo*.png build/.) || echo "no cairo png files found!"
         cd -
     - name: Archive examples
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: build_examples
         path: examples/build

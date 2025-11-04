@@ -15,7 +15,7 @@ jobs:
       run: git config --global core.autocrlf input
     - uses: actions/checkout@v4
     - name: Set up Python v${{matrix.python-version}} - ${{runner.os}}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{matrix.python-version}}
         cache: pip
@@ -52,7 +52,7 @@ jobs:
       run: git config --global core.autocrlf input
     - uses: actions/checkout@v4
     - name: Set up Python v${{matrix.python-version}} - ${{runner.os}}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{matrix.python-version}}
         cache: pip

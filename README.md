@@ -73,6 +73,14 @@ This branch contains automatically generated example images from py-staticmaps.
 ## SVG tight example
 ![us_capitals.tight.svg](us_capitals.tight.svg?raw=true)
 
+# IDL
+## Cairo example
+![idl_cairo.png](idl.cairo.png?raw=true)
+## Pillow example
+![idl_pillow.png](idl.pillow.png?raw=true)
+## SVG example
+![idl.svg](idl.svg?raw=true)
+
 # Tile provider
 ## Arcgis-Worldimagery
 ### Cairo example
@@ -175,4 +183,4 @@ This branch contains automatically generated example images from py-staticmaps.
 ![provider_none.tight.svg](provider_none.tight.svg?raw=true)
 
 
-[MIT](LICENSE) &copy; 2020-2024 Florian Pigorsch et al.
+[MIT](LICENSE) &copy; 2020-2025 Florian Pigorsch et al.

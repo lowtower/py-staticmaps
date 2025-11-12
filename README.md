@@ -100,7 +100,9 @@ with open("frankfurt_newyork.warsaw_los_angeles_bounds.tight.svg", "w", encoding
     svg_image.write(f, pretty=True)
 ```
 #### Cairo example
-![frankfurt_newyork](../assets/frankfurt_newyork.cairo.png?raw=true)
+![frankfurt_newyork_cairo](../assets/frankfurt_newyork.cairo.png?raw=true)
+#### Pillow example
+![frankfurt_newyork_pillow](../assets/frankfurt_newyork.pillow.png?raw=true)
 #### SVG example
 ![frankfurt_newyork_svg](../assets/frankfurt_newyork.svg?raw=true)
 #### SVG tight example
@@ -147,7 +149,7 @@ with open("freiburg_area.svg", "w", encoding="utf-8") as f:
     svg_image.write(f, pretty=True)
 ```
 #### Cairo example
-![freiburg_area](../assets/freiburg_area.cairo.png?raw=true)
+![freiburg_area_cairo](../assets/freiburg_area.cairo.png?raw=true)
 #### SVG tight example
 ![freiburg_area_svg_tight](../assets/freiburg_area.tight.svg?raw=true)
 
@@ -196,7 +198,7 @@ with open("draw_gpx.tight.svg", "w", encoding="utf-8") as f:
     svg_image.write(f, pretty=True)
 ```
 #### Cairo example
-![draw_gpx](../assets/running.cairo.png?raw=true)
+![draw_gpx_cairo](../assets/running.cairo.png?raw=true)
 #### SVG tight example
 ![draw_gpx_svg_tight](../assets/running.tight.svg?raw=true)
 
@@ -227,7 +229,7 @@ image = context.render_cairo(800, 500)
 image.write_to_png("us_capitals.cairo.png")
 ```
 #### Cairo example
-![us_capitals](../assets/us_capitals.cairo.png?raw=true)
+![us_capitals_cairo](../assets/us_capitals.cairo.png?raw=true)
 #### SVG tight example
 ![us_capitals_svg_tight](../assets/us_capitals.tight.svg?raw=true)
 
@@ -255,13 +257,48 @@ image = context.render_cairo(800, 600)
 image.write_to_png("geodesic_circles.cairo.png")
 ```
 #### Cairo example
-![geodesic_circles](../assets/geodesic_circles.cairo.png?raw=true)
+![geodesic_circles_cairo](../assets/geodesic_circles.cairo.png?raw=true)
 #### Pillow example
 ![geodesic_circles_pillow](../assets/geodesic_circles.pillow.png?raw=true)
 #### SVG example
 ![geodesic_circles_svg](../assets/geodesic_circles.svg?raw=true)
 #### SVG tight example
 ![geodesic_circles_svg_tight](../assets/geodesic_circles.tight.svg?raw=true)
+
+### IDL
+```python
+import staticmaps
+
+context = staticmaps.Context()
+context.set_tile_provider(staticmaps.tile_provider_ArcGISWorldImagery)
+
+hongkong = staticmaps.create_latlng(22.308046, 113.918480)
+newyork = staticmaps.create_latlng(40.641766, -73.780968)
+
+context.add_object(staticmaps.Line([hongkong, newyork], color=staticmaps.BLUE))
+context.add_object(staticmaps.Marker(hongkong, color=staticmaps.GREEN))
+context.add_object(staticmaps.Marker(newyork, color=staticmaps.RED))
+
+# render png via pillow
+image = context.render_pillow(1920, 1080)
+image.save("idl.pillow.png")
+
+# render png via cairo
+if staticmaps.cairo_is_supported():
+    cairo_image = context.render_cairo(1920, 1080)
+    cairo_image.write_to_png("idl.cairo.png")
+
+# render svg
+svg_image = context.render_svg(1920, 1080)
+with open("idl.svg", "w", encoding="utf-8") as f:
+    svg_image.write(f, pretty=True)
+```
+#### Cairo example
+![idl_cairo](../assets/idl.cairo.png?raw=true)
+#### Pillow example
+![idl_pillow](../assets/idl.pillow.png?raw=true)
+#### SVG example
+![idl_svg](../assets/idl.svg?raw=true)
 
 ### Other Examples
 Please take a look at the command line program which uses the `staticmaps` package: `staticmaps/cli.py`

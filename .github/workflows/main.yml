@@ -74,6 +74,7 @@ jobs:
         PYTHONPATH=.. python frankfurt_newyork.py
         PYTHONPATH=.. python freiburg_area.py
         PYTHONPATH=.. python geodesic_circles.py
+        PYTHONPATH=.. python idl.py
         PYTHONPATH=.. python tile_providers.py
         PYTHONPATH=.. python us_capitals.py
         (ls        *.svg && mv        *.svg build/.) || echo "no svg files found!"

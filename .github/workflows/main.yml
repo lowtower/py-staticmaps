@@ -105,7 +105,7 @@ jobs:
     - name: Git clone
       run: git clone https://github.com/lowtower/py-staticmaps --branch assets assets
     - name: Download artifacts
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: build_examples
     - name: Move pictures and commit

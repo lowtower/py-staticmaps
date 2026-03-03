@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 """py-staticmaps - Example Custom Objects"""
+
 # Copyright (c) 2021 Florian Pigorsch; see /LICENSE for licensing information
 
 try:

@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 """py-staticmaps - Example Geodesic Circles"""
+
 # Copyright (c) 2020 Florian Pigorsch; see /LICENSE for licensing information
 
 import staticmaps

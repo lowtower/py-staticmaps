@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 """py-staticmaps - Example US capitals"""
+
 # Copyright (c) 2020 Florian Pigorsch; see /LICENSE for licensing information
 
 import json

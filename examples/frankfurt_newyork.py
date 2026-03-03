@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 """py-staticmaps - Example Frankfurt-New York"""
+
 # Copyright (c) 2020-2025 Florian Pigorsch & Contributors. All rights reserved.
 #
 # Use of this source code is governed by a MIT-style

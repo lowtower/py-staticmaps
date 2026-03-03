@@ -61,3 +61,4 @@ data
 *.mkv
 *.wmv
 examples/build
+build

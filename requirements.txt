@@ -1,6 +1,6 @@
 appdirs
 geographiclib
-PILLOW>=12.1.1
+PILLOW>=12.2.0
 python-slugify
 requests
 s2sphere

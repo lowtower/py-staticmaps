@@ -1,7 +1,6 @@
 """py-staticmaps - Test Context"""
 
-# py-staticmaps
-# Copyright (c) 2020 Florian Pigorsch; see /LICENSE for licensing information
+# Copyright (c) 2020-2026 Florian Pigorsch & Contributors. All rights reserved. See /LICENSE for licensing information
 
 import pytest  # type: ignore
 import s2sphere  # type: ignore

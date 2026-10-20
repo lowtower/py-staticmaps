@@ -2,7 +2,7 @@
 
 """py-staticmaps - Example Frankfurt-New York"""
 
-# Copyright (c) 2020-2025 Florian Pigorsch & Contributors. All rights reserved.
+# Copyright (c) 2020-2026 Florian Pigorsch & Contributors. All rights reserved. See /LICENSE for licensing information
 #
 # Use of this source code is governed by a MIT-style
 # license that can be found in the LICENSE file.
@@ -17,10 +17,11 @@ frankfurt = staticmaps.create_latlng(50.110644, 8.682092)
 newyork = staticmaps.create_latlng(40.712728, -74.006015)
 los_angeles = staticmaps.create_latlng(33.999099, -118.411735)
 
-context.add_object(staticmaps.Line([frankfurt, newyork], color=staticmaps.BLUE, width=4))
+context.add_object(staticmaps.Line([frankfurt, newyork], color=staticmaps.BLUE, width=4, dash_array=[10, 5]))
 context.add_object(staticmaps.Marker(frankfurt, color=staticmaps.GREEN, size=12))
 context.add_object(staticmaps.Marker(newyork, color=staticmaps.RED, size=12))
 
+# Use dash_array on a Line or Area to alternate dash and gap lengths, in pixels.
 # render png via pillow
 image = context.render_pillow(800, 500)
 image.save("frankfurt_newyork.pillow.png")

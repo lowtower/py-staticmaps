@@ -1,6 +1,6 @@
 """py-staticmaps __init__"""
 
-# Copyright (c) 2020 Florian Pigorsch; see /LICENSE for licensing information
+# Copyright (c) 2020-2026 Florian Pigorsch & Contributors. All rights reserved. See /LICENSE for licensing information
 
 # flake8: noqa
 from .area import Area

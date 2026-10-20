@@ -2,7 +2,7 @@
 
 """py-staticmaps - Example Freiburg Area"""
 
-# Copyright (c) 2020 Florian Pigorsch; see /LICENSE for licensing information
+# Copyright (c) 2020-2026 Florian Pigorsch & Contributors. All rights reserved. See /LICENSE for licensing information
 
 import staticmaps
 
@@ -442,6 +442,7 @@ context.add_object(
         fill_color=staticmaps.parse_color("#00FF007F"),
         width=2,
         color=staticmaps.BLUE,
+        dash_array=[10, 5],
     )
 )
 
